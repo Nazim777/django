@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}About page{% endblock title %} 
+{% block body %}
+
+<div class="container my-3">
+
+   <h1 class="main">Welcome to the {{page}}</h1>
+   <h4>Fruits</h4>
+   {%for i in fruits%}
+   <p>{{i}}</p>
+   {%endfor%}
+
+   <div>
+    <h4>user table</h4>
+    
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+        {%for user in users%}
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    
+    <div>
+        <h4>numbers</h4>
+    {%if numbers|length > 0%}  
+
+        {%for n in numbers%}
+
+            {% if n > 30 %}
+
+              {{n}}
+
+            {%endif%}
+
+        {%endfor%}
+    {%else%}
+      no data found
+    {%endif%}  
+
+
+    </div>
+    
+   </div>
+
+</div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    
+  
+{% endblock body %}

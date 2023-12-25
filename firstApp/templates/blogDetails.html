@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} {{ blog_post.title }} {% endblock title%}
+{% block body %}
+<div class="container">
+    <h1>{{ blog_post.title }}</h1>
+    <p><strong>Author:</strong> {{ blog_post.author.user.username }}</p>
+    <p><strong>Publication Date:</strong> {{ blog_post.publication_date }}</p>
+    <p>{{ blog_post.content |safe }}</p>
+    <p><strong>Categories:</strong> {{ blog_post.categories.all|join:", " }}</p>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}User Info page{% endblock title %} 
+{% block body %}
+<div class="container">
+    <h1>Welcome to the user info page!</h1>
+</div>
+<div class="container">
+    {% if name %}
+    <p>Name: {{name}}</p>
+    <p>Email: {{email}}</p>
+    {% else %}
+    <p>No Active User found!, Please Add One!</p>
+    {% endif %}
+</div>
+
+
+{% endblock body %}
